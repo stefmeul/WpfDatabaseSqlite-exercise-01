@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfDatabaseSqlite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDatabaseSqlite"
+        mc:Ignorable="d"
+    Title="MainWindow" Height="450" Width="450" Background="#002200">
+    <Grid>
+        
+        <ListView Name="Itemlist" Margin="5,20,5,0" Background="AntiqueWhite"  Height="150" VerticalAlignment="Top">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header = "Clear" Click="MenuItem_Click" ></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="30" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                    <GridViewColumn Header="Name" Width="130" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="Address" Width="130" DisplayMemberBinding="{Binding Address}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <CheckBox x:Name="EnableCheckbox" Content="Edit"    HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"></CheckBox>
+
+        <Grid x:Name="EditGrid" Background="AntiqueWhite" IsEnabled="{Binding ElementName=EnableCheckbox, Path=IsChecked}" Height="100" Margin="10,210,0,0" VerticalAlignment="Top">
+            <Label Content="Name" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"></Label>
+            <Label Content="Address" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"></Label>
+            <TextBox x:Name="NameTextbox" Text="{Binding ElementName=Itemlist , Path=SelectedItem.Name , Mode=OneWay}" HorizontalAlignment="Left" Margin="80,5,0,0" Width="150" Height="25" VerticalAlignment="Top"></TextBox>
+            <TextBox x:Name="AddressTextbox" Text="{Binding ElementName=Itemlist , Path=SelectedItem.Address , Mode=OneWay}"  HorizontalAlignment="Left" Margin="80,35,0,0" Width="150" Height="25" VerticalAlignment="Top"></TextBox>
+        </Grid>
+        <Button x:Name="btnCreate" Content="Create" Width="50" Margin="30,330,360,80" Click="btnCreate_Click"></Button>
+        <Button x:Name="btnRead" Content="Read" HorizontalAlignment="Left" Margin="100,332,0,0" VerticalAlignment="Top" Click="btnRead_Click"/>
+        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="150,332,0,0" VerticalAlignment="Top" Click="Update_Click"/>
+        <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="200,332,0,0" VerticalAlignment="Top" Click="Delete_Click"/>
+
+    </Grid>
+</Window>
