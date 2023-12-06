@@ -17,9 +17,10 @@ namespace WpfDatabaseSqlite
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            DatabaseFacade facade = new DatabaseFacade(new DataContext());  // ERROR, can't find or create a Database
-            facade.EnsureCreated();
-        
+            DatabaseFacade facade = new DatabaseFacade(new DataContext());
+            //   facade.EnsureCreated();
+                                     // ERROR, can't find or create a Database
+
         }
     }
 }

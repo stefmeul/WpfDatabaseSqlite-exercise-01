@@ -11,7 +11,7 @@ namespace WpfDatabaseSqlite
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source = UserData.db");
+            optionsBuilder.UseSqlite("Data Source = /bin/Debug/UserData.db");
         }
 
         public DbSet<User> Users { get; set; }

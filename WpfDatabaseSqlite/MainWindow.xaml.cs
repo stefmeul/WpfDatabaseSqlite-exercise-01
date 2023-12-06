@@ -60,8 +60,8 @@ namespace WpfDatabaseSqlite
             {
                 User selectedUser = Itemlist.SelectedItem as User;
 
-                var name = NameTextbox.Text;
-                var address = AddressTextbox.Text;
+                string name = NameTextbox.Text;
+                string address = AddressTextbox.Text;
 
                 if (name != null && address != null)
                 {
@@ -111,6 +111,8 @@ namespace WpfDatabaseSqlite
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             DeleteUser();
+            Read();
+
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

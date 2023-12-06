@@ -24,7 +24,7 @@
             </ListView.View>
         </ListView>
 
-        <CheckBox x:Name="EnableCheckbox" Content="Edit"    HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"></CheckBox>
+        <CheckBox x:Name="EnableCheckbox" Content="Enable Editing "    HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Foreground="White"></CheckBox>
 
         <Grid x:Name="EditGrid" Background="AntiqueWhite" IsEnabled="{Binding ElementName=EnableCheckbox, Path=IsChecked}" Height="100" Margin="10,210,0,0" VerticalAlignment="Top">
             <Label Content="Name" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"></Label>
@@ -32,7 +32,7 @@
             <TextBox x:Name="NameTextbox" Text="{Binding ElementName=Itemlist , Path=SelectedItem.Name , Mode=OneWay}" HorizontalAlignment="Left" Margin="80,5,0,0" Width="150" Height="25" VerticalAlignment="Top"></TextBox>
             <TextBox x:Name="AddressTextbox" Text="{Binding ElementName=Itemlist , Path=SelectedItem.Address , Mode=OneWay}"  HorizontalAlignment="Left" Margin="80,35,0,0" Width="150" Height="25" VerticalAlignment="Top"></TextBox>
         </Grid>
-        <Button x:Name="btnCreate" Content="Create" Width="50" Margin="30,330,360,80" Click="btnCreate_Click"></Button>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="30,332,0,0" VerticalAlignment="Top" Click="btnCreate_Click"/>
         <Button x:Name="btnRead" Content="Read" HorizontalAlignment="Left" Margin="100,332,0,0" VerticalAlignment="Top" Click="btnRead_Click"/>
         <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="150,332,0,0" VerticalAlignment="Top" Click="Update_Click"/>
         <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="200,332,0,0" VerticalAlignment="Top" Click="Delete_Click"/>
